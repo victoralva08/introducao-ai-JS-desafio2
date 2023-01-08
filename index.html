@@ -8,9 +8,6 @@
 <body>
     <script>
 
-        
-let index = 0
-
 const students = [
     {
         nome: 'Ana',
@@ -49,23 +46,61 @@ let averageGrade = (nota1, nota2) => {
     return ((nota1 + nota2) / 2).toFixed(2)
 }
 
-for (let finalGrade of students){
-    finalGrade = averageGrade(students[index].notaProvaUm, students[index].notaProvaDois)
+for (let student of students){
+
+    let finalGrade = averageGrade(student.notaProvaUm, student.notaProvaDois)
 
     switch(finalGrade >= 7){
         case true:
-            alert(`A média do(a) aluno(a) ${students[index].nome} é: ${finalGrade}.
-Parabéns, ${students[index].nome}! Você foi aprovado(a) no concurso!`)
+            alert(`A média do(a) aluno(a) ${student.nome} é: ${finalGrade}.
+Parabéns, ${student.nome}! Você foi aprovado(a) no concurso!`)
         break
 
         case false:
-            alert(`A média do(a) aluno(a) ${students[index].nome} é: ${finalGrade}.
-Não foi dessa vez, ${students[index].nome}! Tente novamente!`)
+            alert(`A média do(a) aluno(a) ${student.nome} é: ${finalGrade}.
+Não foi dessa vez, ${student.nome}! Tente novamente!`)
         break
     }
 
-    index++
 }
+
+/* Código alternativo:
+
+    let listaDeEstudantes = [
+    {
+        nomeDoEstudante: 'Murilo',
+        primeiraNota: 6,
+        segundaNota: 9,
+    },
+
+    {
+        nomeDoEstudante: 'Ana',
+        primeiraNota: 5,
+        segundaNota: 3,
+    },
+
+    {
+        nomeDoEstudante: 'Sara',
+        primeiraNota: 8,
+        segundaNota: 8,
+    }        
+]
+
+function calculaMedia(primeiraNota,segundaNota) {
+let media = (primeiraNota + segundaNota) / 2
+return media
+}
+   
+
+for(let estudante of listaDeEstudantes){
+    mediaIndividual = calculaMedia(estudante.primeiraNota, estudante.segundaNota)
+    let aprovadoOuNao = mediaIndividual < 7 ? 'Infelizmente não foi dessa vez. Estude mais' : 'Parabéns pela sua aprovação'
+
+    alert(`A média de ${estudante.nomeDoEstudante} é ${mediaIndividual}.
+${aprovadoOuNao}`)
+}    
+
+*/
 
 
     </script>
