@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+let index = 0
+
+const students = [
+    {
+        nome: 'Ana',
+        notaProvaUm: 5,
+        notaProvaDois: 7
+    },
+
+    {
+        nome: 'Bruno',
+        notaProvaUm: 8.2,
+        notaProvaDois: 4.5
+    },
+
+    {
+        nome: 'Carlos',
+        notaProvaUm: 10,
+        notaProvaDois: 6.8
+    },
+
+    
+    {
+        nome: 'Daniel',
+        notaProvaUm: 1,
+        notaProvaDois: 3.5
+    },
+
+    
+    {
+        nome: 'Esther',
+        notaProvaUm: 10,
+        notaProvaDois: 9.8
+    },
+]
+
+let averageGrade = (nota1, nota2) => {
+    return ((nota1 + nota2) / 2).toFixed(2)
+}
+
+for (let finalGrade of students){
+    finalGrade = averageGrade(students[index].notaProvaUm, students[index].notaProvaDois)
+
+    switch(finalGrade >= 7){
+        case true:
+            alert(`A média do(a) aluno(a) ${students[index].nome} é: ${finalGrade}.
+Parabéns, ${students[index].nome}! Você foi aprovado(a) no concurso!`)
+        break
+
+        case false:
+            alert(`A média do(a) aluno(a) ${students[index].nome} é: ${finalGrade}.
+Não foi dessa vez, ${students[index].nome}! Tente novamente!`)
+        break
+    }
+
+    index++
+}
+
+
+    </script>
+</body>
+</html>
